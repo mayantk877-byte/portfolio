@@ -1,109 +1,729 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="T. Mayan - Java Developer & Software Engineer Portfolio. B.E. Computer Science Graduate with strong knowledge in Core Java, OOPs, Collections, JDBC, SQL, HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="T. Mayan, Java Developer, Core Java, JDBC, SQL, MySQL, Oracle SQL, JavaScript, HTML, CSS, Portfolio">
+    <meta name="author" content="T. Mayan">
+    <title>T. Mayan | Java Developer & Software Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 Icons (CDN with Integrity & Fallback) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <nav>
-        <h1>MyPortfolio</h1>
-        <ul type="none">
-            <li><a href="home">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="projects">Projects</a></li>
-            <li><a href="contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Background Ambient Glow Orbs in Royal Blue & Ice Sky -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
 
+    <!-- Executive Professional Header / Navigation Bar -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#home" class="brand-logo" aria-label="Portfolio Home">
+                <span class="brand-name">Portfolio<span class="logo-dot">.</span></span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> <span>About</span></a></li>
+                <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> <span>Skills</span></a></li>
+                <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> <span>Projects</span></a></li>
+                <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-award"></i> <span>Certificates</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+
+            <!-- Header Action Controls -->
+            <div class="nav-actions">
+                <!-- Status Chip -->
+                <div class="nav-status-chip" title="Available for immediate hiring">
+                    <span class="status-pulse-dot"></span>
+                    <span>Open to Work</span>
+                </div>
+
+                <!-- Dark / Light Theme Toggle -->
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Professional CTA Button -->
+                <a href="#contact" class="btn btn-sm btn-header-cta">
+                    <span>Contact Me</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section -->
     <main id="home">
-        <div class="left">
-            <h3>Hello,</h3>
-            <h1>I'm <span>Iniaya</span></h1>
-            <h2>Website Designer</h2>
-            <p>Lorem ipsum dolor, sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, assumenda.consectetur adipisicing elit. Eos ipsam commodi ut, facilis placeat sit sint hic laboriosam nobis officiis?</p>
-            <button>Hire Me</button>
+        <div class="hero-container">
+            <div class="left reveal">
+                <div class="badge-pill">
+                    <span class="status-dot"></span> Java FullStack Developer Fresher
+                </div>
+                <h3>Hello,</h3>
+                <h1>I'm <span class="name-gradient">T. Mayan</span></h1>
+                <h2 class="dynamic-heading">I am a <span class="typing-text">Java Developer</span><span class="cursor">&nbsp;</span></h2>
+                <p>Computer Science Engineering graduate with strong knowledge of Core Java, OOPs, Collections Framework, Exception Handling, Stream API, JDBC, SQL, HTML, CSS, and JavaScript. Experienced in developing projects involving backend development, database management, and responsive web design. Proficient in writing clean, maintainable code and optimizing SQL queries. Familiar with SDLC, Agile methodologies, Git, and GitHub.</p>
+                
+                <!-- Quick Contact Info Pills -->
+                <div class="hero-contact-pills">
+                    <span class="contact-pill"><i class="fa-solid fa-location-dot"></i> Madurai, Tamil Nadu</span>
+                    <a href="mailto:mayan843853@gmail.com" class="contact-pill copyable" data-copy="mayan843853@gmail.com" title="Click to email or copy"><i class="fa-solid fa-envelope"></i> mayan843853@gmail.com</a>
+                    <a href="tel:+918438532668" class="contact-pill copyable" data-copy="+918438532668" title="Click to call or copy"><i class="fa-solid fa-phone"></i> +91 8438532668</a>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-glow">
+                        <span>Get In Touch</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>View Projects</span>
+                    </a>
+                    <a href="#about" class="btn btn-outline" id="resumeBtn">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>About Resume</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mayan-t" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon" title="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:mayan843853@gmail.com" aria-label="Email" class="social-icon" title="Email Mayan">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="tel:+918438532668" aria-label="Phone" class="social-icon" title="Call Mayan">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="right reveal">
+                <!-- Circular Avatar Layout with Glowing Rings -->
+                <div class="image-wrapper circle-layout">
+                    <div class="circle-spin-ring"></div>
+                    <div class="circle-pulse-ring"></div>
+                    <div class="image-frame circle-frame">
+                        <img src="./Photos/Mayan.jpg" alt="T. Mayan - Java Developer" loading="eager">
+                    </div>
+
+                    <!-- Floating Feature Badges -->
+                    <div class="floating-badge badge-top">
+                        <div class="badge-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="badge-text">
+                            <strong>B.E. CSE</strong>
+                            <small>CGPA: 8.43</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-bottom">
+                        <div class="badge-icon"><i class="fa-brands fa-java"></i></div>
+                        <div class="badge-text">
+                            <strong>Core Java</strong>
+                            <small>OOPs & JDBC</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-side">
+                        <div class="badge-icon icon-cyan"><i class="fa-solid fa-database"></i></div>
+                        <div class="badge-text">
+                            <strong>SQL & DB</strong>
+                            <small>Oracle SQL & MySQL</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="right">
-
-        </div>
-
     </main>
 
+    <!-- About Section -->
     <section id="about">
-        <h1>What I Do</h1>
-        <p>vitae ex quis unde quae deserunt cumque soluta beatae. Porro totam in accusamus laboriosam eaque quo.</p>
-
-        <div class="card">
-            <h2>web Design</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magni, autem ipsam temporibus amet dolorum illum sunt soluta distinctio? Ut.</p>
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-user"></i> Profile Summary</span>
+            <h1>About Me</h1>
+            <p>A quick introduction to my technical profile, background, and career aspirations.</p>
         </div>
 
-        <div class="card">
-            <h2>Java Progamming</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magni, autem ipsam temporibus amet dolorum illum sunt soluta distinctio? Ut.</p>
-        </div>
+        <div class="about-container reveal">
+            <div class="about-card">
+                <div class="about-text">
+                    <p class="lead-text">
+                        Computer Science Engineering graduate based in <strong>Madurai, Tamil Nadu</strong> with strong knowledge of <strong>Core Java, OOPs, Collections Framework, JDBC, SQL, HTML, CSS, and JavaScript</strong> (<strong>CGPA: 8.43</strong>).
+                    </p>
+                    <p>
+                        Experienced in developing academic projects involving backend development, core system architecture, and database management. Proficient in writing clean, maintainable code and optimizing SQL queries for fast data retrieval. Familiar with <strong>SDLC, Agile methodologies, Git, and GitHub</strong>. Passionate about software development and eager to contribute as a Java Developer while continuously enhancing technical expertise.
+                    </p>
+                </div>
 
-        <div class="card">
-            <h2>DataBase Skill</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magni, autem ipsam temporibus amet dolorum illum sunt soluta distinctio? Ut.</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div>
+                            <h4>Education</h4>
+                            <p>B.E. CSE &bull; CGPA: 8.43</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon icon-purple"><i class="fa-brands fa-java"></i></div>
+                        <div>
+                            <h4>Core Focus</h4>
+                            <p>Java, JDBC & SQL Databases</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon icon-amber"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Madurai, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon icon-green"><i class="fa-solid fa-circle-check"></i></div>
+                        <div>
+                            <h4>Status</h4>
+                            <p>Available for Java Developer Roles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-graduation-cap"></i> Academic Background</span>
+            <h1>Education</h1>
+            <p>My academic milestones, degrees, and foundational learning timeline.</p>
+        </div>
+
+        <div class="timeline-wrapper reveal">
+            <!-- Timeline Item 1: B.E. CSE -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-badge">Jun 2022 - May 2026</span>
+                            <h3>Bachelor Of Engineering (B.E.)</h3>
+                            <h4 class="timeline-subtitle">Computer Science Engineering</h4>
+                        </div>
+                        <div class="score-pill">
+                            <span class="score-label">CGPA</span>
+                            <span class="score-val">8.43</span>
+                        </div>
+                    </div>
+                    <p class="timeline-institution"><i class="fa-solid fa-building-columns"></i> BNEC (Bharat Niketan Engineering College) | Theni, Tamil Nadu</p>
+                    <p class="timeline-desc">Specializing in Core Java programming, OOPs, Collections Framework, Exception Handling, Stream API, JDBC, Database Management Systems (DBMS), and Web Technologies with high academic performance.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2: 12th Grade -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-badge">Jun 2020 - May 2022</span>
+                            <h3>Higher Secondary (12th Standard)</h3>
+                            <h4 class="timeline-subtitle">State Board of Tamil Nadu</h4>
+                        </div>
+                        <div class="score-pill">
+                            <span class="score-label">Score</span>
+                            <span class="score-val">83.33%</span>
+                        </div>
+                    </div>
+                    <p class="timeline-institution"><i class="fa-solid fa-school"></i> Nadar Saraswathi Higher Secondary School | Usilampatti, Madurai</p>
+                    <p class="timeline-desc">Completed Higher Secondary education with focus on Science and Mathematics, securing an aggregate of 83.33%.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3: DCA Course -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="timeline-badge">Sep 2020 - Mar 2021</span>
+                            <h3>Diploma In Computer Application Course (DCA)</h3>
+                            <h4 class="timeline-subtitle">Computer Application & Software Fundamentals</h4>
+                        </div>
+                        <div class="score-pill">
+                            <span class="score-label">Status</span>
+                            <span class="score-val">Completed</span>
+                        </div>
+                    </div>
+                    <p class="timeline-institution"><i class="fa-solid fa-chalkboard-user"></i> CSC Computer Education | Usilampatti, Madurai</p>
+                    <p class="timeline-desc">Comprehensive training in computer fundamentals, MS Word, MS Excel, and MS PowerPoint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section: ACCORDING TO RESUME -->
+    <section id="skills">
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-code"></i> Technical & Professional Skills</span>
+            <h1>What I Do & My Skills</h1>
+            <p>Comprehensive overview of my core Java programming competencies, database management, web technologies, and soft skills.</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 1: Programming & Core Java Concepts -->
+            <div class="card tilt-effect reveal">
+                <div class="card-icon">
+                    <i class="fa-brands fa-java"></i>
+                </div>
+                <h2>Core Java & Concepts</h2>
+                <p>Strong foundation in Java programming, Object-Oriented Programming (OOPs), Collections Framework, robust Exception Handling, Stream API, and JDBC for backend connectivity.</p>
+                <div class="skill-tags">
+                    <span>Java</span>
+                    <span>OOPs</span>
+                    <span>Collections Framework</span>
+                    <span>Exception Handling</span>
+                    <span>Stream API</span>
+                    <span>JDBC</span>
+                </div>
+                <div class="card-glow-line"></div>
+            </div>
+
+            <!-- Card 2: Database Management (Oracle SQL & MySQL) -->
+            <div class="card tilt-effect reveal">
+                <div class="card-icon icon-cyan">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h2>Database Skill</h2>
+                <p>Architecting relational databases, managing data integrity, writing clean structured queries, and optimizing SQL queries for efficient data storage and fast retrieval.</p>
+                <div class="skill-tags">
+                    <span>Oracle SQL</span>
+                    <span>MySQL</span>
+                    <span>SQL Queries</span>
+                    <span>Query Optimization</span>
+                    <span>Relational DB</span>
+                    <span>Data Integrity</span>
+                </div>
+                <div class="card-glow-line"></div>
+            </div>
+
+            <!-- Card 3: Frontend Web Technologies (HTML, CSS, JavaScript) -->
+            <div class="card tilt-effect reveal">
+                <div class="card-icon icon-amber">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h2>Frontend WebTech</h2>
+                <p>Building clean, semantic, and modern responsive user interfaces using HTML, CSS, and interactive JavaScript with DOM manipulation and responsive design principles.</p>
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive UI</span>
+                    <span>DOM Manipulation</span>
+                </div>
+                <div class="card-glow-line"></div>
+            </div>
+
+            <!-- Card 4: Tools & Methodologies -->
+            <div class="card tilt-effect reveal">
+                <div class="card-icon icon-purple">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h2>Tools & Methodologies</h2>
+                <p>Code version control using Git and GitHub, code authoring in VS Code and Eclipse IDE, MS Office Suite (Word, Excel, PowerPoint), along with SDLC and Agile methodologies.</p>
+                <div class="skill-tags">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>VS Code</span>
+                    <span>Eclipse IDE</span>
+                    <span>MS Word</span>
+                    <span>MS Excel</span>
+                    <span>MS PowerPoint</span>
+                    <span>SDLC</span>
+                    <span>Agile</span>
+                </div>
+                <div class="card-glow-line"></div>
+            </div>
+
+            <!-- Card 5: Soft Skills -->
+            <div class="card tilt-effect reveal">
+                <div class="card-icon icon-green">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <h2>Soft Skills</h2>
+                <p>Effective time management, rapid adaptability as a quick learner, collaborative teamwork in agile sprints, and strong logical problem-solving capabilities.</p>
+                <div class="skill-tags">
+                    <span>Time Management</span>
+                    <span>Quick Learner</span>
+                    <span>Teamwork</span>
+                    <span>Strong Problem Solving</span>
+                </div>
+                <div class="card-glow-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects">
-        <h1>My Projects</h1>
-        <p>Here are some projects i have developed using HTML,CSS,JavaScript and React</p>
-
-        <article>
-        <div class="projectCard">
-            <img src="./Photos/Password.jpg" alt="password">
-            <h3>Password Generator</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui unde eveniet at fugiat placeat fuga?Lorem ipsum dolor sit amet.</p>
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> Portfolio Showcase</span>
+            <h1>Featured Projects</h1>
+            <p>Academic and technical projects involving Core Java, SQL database management, Machine Learning, and JavaScript web development.</p>
         </div>
 
-        <div class="projectCard">
-            <img src="./Photos/Todo.jpg" alt="Todo">
-            <h3>ToDo Aplication</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui unde eveniet at fugiat placeat fuga?Lorem ipsum dolor sit amet.</p>
+        <!-- Project Filter Buttons -->
+        <div class="project-filters reveal">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="java">Java & SQL</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="web">JavaScript & Web</button>
         </div>
 
-        <div class="projectCard">
-            <img src="./Photos/E Commerce.jpg" alt="E Commerce">
-            <h3>E-Commerce WebSite</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui unde eveniet at fugiat placeat fuga?Lorem ipsum dolor sit amet.</p>
-        </div>
+        <article class="projects-grid">
+            <!-- Project 1: Banking Management System (Resume Featured) -->
+            <div class="projectCard featured-card tilt-effect reveal" data-category="java">
+                <div class="project-img-container banking-bg">
+                    <div class="project-banner-badge"><i class="fa-solid fa-star"></i> Resume Featured</div>
+                    <div class="project-card-mockup">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Core Java & SQL Architecture</span>
+                    </div>
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="banking"><i class="fa-solid fa-eye"></i> View System Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Core Java</span>
+                        <span>JDBC</span>
+                        <span>SQL</span>
+                        <span>MySQL / Oracle</span>
+                    </div>
+                    <h3>Banking Management System</h3>
+                    <p>Developed a Banking Management System using Core Java and SQL to manage customer accounts and transactions. Implemented key features such as account creation, deposit, withdrawal, and balance inquiry with optimized SQL queries for efficient data storage and fast retrieval.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="banking"><i class="fa-solid fa-circle-info"></i> Project Details</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Repository</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="projectCard">
-            <img src="./Photos/Weather.jpg" alt="Weather">
-            <h3>Weather</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui unde eveniet at fugiat placeat fuga?Lorem ipsum dolor sit amet.</p>
-        </div>
-    </article>
+            <!-- Project 2: Phishing Detection System (Resume Featured) -->
+            <div class="projectCard featured-card tilt-effect reveal" data-category="ml">
+                <div class="project-img-container ml-bg">
+                    <div class="project-banner-badge"><i class="fa-solid fa-shield-halved"></i> Resume Featured</div>
+                    <div class="project-card-mockup">
+                        <i class="fa-solid fa-shield-virus"></i>
+                        <span>Machine Learning & Security</span>
+                    </div>
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="phishing"><i class="fa-solid fa-eye"></i> View ML Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Machine Learning</span>
+                        <span>Random Forest</span>
+                        <span>Federated Learning</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <h3>Phishing Detection System</h3>
+                    <p>Developed a phishing detection system using Machine Learning techniques. Implemented Random Forest algorithm for accurate URL classification, integrated federated learning to enhance data privacy and security, and designed a real-time alert mechanism to detect malicious URLs.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="phishing"><i class="fa-solid fa-circle-info"></i> Project Details</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Password Generator -->
+            <div class="projectCard tilt-effect reveal" data-category="web">
+                <div class="project-img-container">
+                    <img src="./Photos/Password.jpg" alt="Password Generator Project" loading="lazy">
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="password"><i class="fa-solid fa-eye"></i> View Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Security</span>
+                    </div>
+                    <h3>Password Generator</h3>
+                    <p>An interactive, highly secure password generator utility providing customizable character rules, length selectors, strength indicators, and one-click clipboard copying.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="password"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: ToDo Application -->
+            <div class="projectCard tilt-effect reveal" data-category="web">
+                <div class="project-img-container">
+                    <img src="./Photos/Todo.jpg" alt="ToDo Application Project" loading="lazy">
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="todo"><i class="fa-solid fa-eye"></i> View Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+                        <span>DOM API</span>
+                        <span>CSS3</span>
+                    </div>
+                    <h3>ToDo Application</h3>
+                    <p>A dynamic productivity application allowing users to create, categorize, edit, filter, and persist day-to-day tasks with intuitive status tracking and smooth animations.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="todo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: E-Commerce WebSite -->
+            <div class="projectCard tilt-effect reveal" data-category="web">
+                <div class="project-img-container">
+                    <img src="./Photos/E Commerce.jpg" alt="E-Commerce Website Project" loading="lazy">
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="ecommerce"><i class="fa-solid fa-eye"></i> View Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Shopping Cart</span>
+                    </div>
+                    <h3>E-Commerce WebSite</h3>
+                    <p>A modern e-commerce web platform featuring dynamic product catalogs, category filtering, interactive shopping cart management, and fluid responsive design across all devices.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="ecommerce"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Weather App -->
+            <div class="projectCard tilt-effect reveal" data-category="web">
+                <div class="project-img-container">
+                    <img src="./Photos/Weather.jpg" alt="Weather Application Project" loading="lazy">
+                    <div class="project-overlay">
+                        <button class="view-tag preview-modal-btn" data-project="weather"><i class="fa-solid fa-eye"></i> View Details</button>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Async JS</span>
+                        <span>Weather API</span>
+                        <span>CSS Grid</span>
+                    </div>
+                    <h3>Weather App</h3>
+                    <p>A responsive meteorological dashboard fetching real-time weather forecasts via REST API, providing temperature metrics, humidity rates, wind metrics, and dynamic conditions.</p>
+                    <div class="project-actions">
+                        <button class="project-btn primary preview-modal-btn" data-project="weather"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-btn secondary"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
 
+    <!-- Certifications & Achievements Section -->
+    <section id="certifications">
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-award"></i> Qualifications & Milestones</span>
+            <h1>Certifications & Achievements</h1>
+            <p>Verified certificates and accomplishments earned during my technical career journey.</p>
+        </div>
+
+        <div class="certs-grid reveal">
+            <!-- Certificate 1: DCA Master Course -->
+            <div class="cert-card tilt-effect">
+                <div class="cert-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="cert-tag">Certification</span>
+                    <h3>Diploma in Computer Application (DCA) Master Course</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-building"></i> CSC Madurai</p>
+                    <p class="cert-desc">Master certification covering in-depth office automation tools, MS Word, MS Excel, MS PowerPoint, database concepts, and computer application fundamentals.</p>
+                </div>
+            </div>
+
+            <!-- Achievement 1: Java Developer Proficiency -->
+            <div class="cert-card cert-achievement tilt-effect">
+                <div class="cert-icon icon-purple">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="cert-tag achievement-tag">Achievement</span>
+                    <h3>Java & Database Engineering Proficiency</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-java"></i> Core Java, JDBC, SQL & Web Technologies</p>
+                    <p class="cert-desc">Successfully acquired strong technical proficiency spanning Core Java, OOPs, Collections, Exception Handling, Stream API, JDBC, Oracle SQL, MySQL, HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h1>Contact Me</h1>
+        <div class="section-header reveal">
+            <span class="section-subtitle"><i class="fa-solid fa-envelope-open-text"></i> Get In Touch</span>
+            <h1>Contact Me</h1>
+            <p>I am actively seeking Java Developer and software engineering fresher opportunities. Let's connect!</p>
+        </div>
 
-        <p>Please fill out the form below to display any work opportunits.</p>
+        <div class="contact-wrapper reveal">
+            <!-- Contact Info Cards -->
+            <div class="contact-info">
+                <a href="mailto:mayan843853@gmail.com" class="info-card-link copyable" data-copy="mayan843853@gmail.com" title="Click to email or copy">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email (Click to copy)</h4>
+                            <p>mayan843853@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
 
-        <form action="">
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="Your Email">
-            <textarea name="" id="" placeholder="Your Message"></textarea>
-            <button type="submit">Submit</button>
-        </form>
+                <a href="tel:+918438532668" class="info-card-link copyable" data-copy="+918438532668" title="Click to call or copy">
+                    <div class="info-card">
+                        <div class="info-icon icon-green">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone (Click to copy)</h4>
+                            <p>+91 8438532668</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="info-card">
+                    <div class="info-icon icon-purple">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Madurai, Tamil Nadu, India</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon icon-amber">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h4>Employment Status</h4>
+                        <p>Available Immediately for Roles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" required placeholder="e.g. Hiring Manager / Recruiter">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="email" id="email" required placeholder="e.g. recruiter@company.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <div class="input-with-icon textarea-icon">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <textarea id="message" required placeholder="Tell me about your job opportunity, role, or project..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit btn-glow">
+                    <span>Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-
-        <p>Copyright &copy;MyPortfolio.All Right Reserved</p>
-
-        <div class="icons">
-
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-accent">&lt;</span>T.Mayan<span class="logo-accent">/&gt;</span>
+            </div>
+            <p>Copyright &copy; 2026 T. Mayan. All Rights Reserved. | Java Developer</p>
+            <div class="footer-icons">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/mayan-t" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:mayan843853@gmail.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+918438532668" aria-label="Phone" title="Phone"><i class="fa-solid fa-phone"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Floating Button -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Interactive Project Details / Demo Modal -->
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal-card">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close preview modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Custom Script -->
+    <script src="./script.js"></script>
 </body>
 </html>
