@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "serve": "npx --yes http-server -p 3000 -c-1",
-    "build": "echo 'Static portfolio ready for deployment'"
+    "serve": "npx --yes http-server -p 3000 -c-1"
   },
   "keywords": [
     "portfolio",
