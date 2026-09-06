@@ -654,12 +654,17 @@
             </div>
 
             <!-- Contact Form -->
-            <form id="contactForm" class="contact-form">
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/mayan843853@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Portfolio Message from Mayan's Website">
+
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <div class="input-with-icon">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="name" required placeholder="e.g. Hiring Manager / Recruiter">
+                        <input type="text" id="name" name="name" required placeholder="e.g. Hiring Manager / Recruiter">
                     </div>
                 </div>
 
@@ -667,7 +672,7 @@
                     <label for="email">Your Email</label>
                     <div class="input-with-icon">
                         <i class="fa-solid fa-at"></i>
-                        <input type="email" id="email" required placeholder="e.g. recruiter@company.com">
+                        <input type="email" id="email" name="email" required placeholder="e.g. recruiter@company.com">
                     </div>
                 </div>
 
@@ -675,7 +680,7 @@
                     <label for="message">Your Message</label>
                     <div class="input-with-icon textarea-icon">
                         <i class="fa-solid fa-comment-dots"></i>
-                        <textarea id="message" required placeholder="Tell me about your job opportunity, role, or project..."></textarea>
+                        <textarea id="message" name="message" required placeholder="Tell me about your job opportunity, role, or project..."></textarea>
                     </div>
                 </div>
 
@@ -683,6 +688,17 @@
                     <span>Send Message</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
+
+                <div class="form-direct-actions" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 6px; font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Or reach directly via:</span>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mayan843853@gmail.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-sky); font-weight: 600; text-decoration: underline;">
+                        <i class="fa-brands fa-google"></i> Gmail
+                    </a>
+                    <span>&bull;</span>
+                    <a href="mailto:mayan843853@gmail.com" style="color: var(--accent-sky); font-weight: 600; text-decoration: underline;">
+                        <i class="fa-solid fa-envelope"></i> Email App
+                    </a>
+                </div>
             </form>
         </div>
     </section>

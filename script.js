@@ -419,30 +419,96 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 12. Interactive Contact Form Submission
+    // 12. Interactive Contact Form Submission (100% Free Lifetime Delivery)
     // ---------------------------------------------------------
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+
+            if (!name || !email || !message) {
+                showToast('Please fill in all fields before sending.', 'fa-solid fa-triangle-exclamation');
+                return;
+            }
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalHtml = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+            // When opened locally via file://, open Gmail/Mail Client directly to avoid FormSubmit web server error
+            if (window.location.protocol === 'file:') {
+                submitBtn.innerHTML = '<i class="fa-solid fa-envelope-circle-check"></i> <span>Opening Gmail...</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                showToast('Opening Gmail directly to send message to mayan843853@gmail.com...', 'fa-solid fa-envelope');
+
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mayan843853@gmail.com&su=${encodeURIComponent('Portfolio Contact from ' + name)}&body=${encodeURIComponent('Hi Mayan,\n\n' + message + '\n\n---\nSender Name: ' + name + '\nSender Email: ' + email)}`;
+                const mailtoUrl = `mailto:mayan843853@gmail.com?subject=${encodeURIComponent('Portfolio Contact from ' + name)}&body=${encodeURIComponent('Hi Mayan,\n\n' + message + '\n\n---\nSender Name: ' + name + '\nSender Email: ' + email)}`;
+
+                const win = window.open(gmailUrl, '_blank');
+                if (!win || win.closed || typeof win.closed === 'undefined') {
+                    window.location.href = mailtoUrl;
+                }
+
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitBtn.innerHTML = originalHtml;
+                    submitBtn.style.background = '';
+                }, 3000);
+                return;
+            }
+
+            // When hosted on a Web Server (GitHub Pages, Vercel, Netlify, localhost)
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Message...</span>';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Message Sent!</span>';
-                submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                showToast('Thank you! Your message was sent successfully.', 'fa-solid fa-paper-plane');
-                contactForm.reset();
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/mayan843853@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message,
+                        _subject: `New Portfolio Message from ${name} (${email})`,
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
+                });
 
+                const result = await response.json();
+
+                if (response.ok && (result.success === 'true' || result.success === true)) {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Message Sent!</span>';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    showToast('Thank you! Message sent directly to mayan843853@gmail.com', 'fa-solid fa-paper-plane');
+                    contactForm.reset();
+                } else {
+                    throw new Error((result && result.message) || 'Delivery failed');
+                }
+            } catch (err) {
+                console.warn('Network delivery fallback to Gmail compose:', err);
+                submitBtn.innerHTML = '<i class="fa-solid fa-envelope"></i> <span>Opening Gmail...</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #0284c7, #0369a1)';
+                showToast('Opening Gmail to deliver your message...', 'fa-solid fa-envelope');
+                
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mayan843853@gmail.com&su=${encodeURIComponent('Portfolio Contact from ' + name)}&body=${encodeURIComponent('Hi Mayan,\n\n' + message + '\n\n---\nSender Name: ' + name + '\nSender Email: ' + email)}`;
+                window.open(gmailUrl, '_blank');
+            } finally {
                 setTimeout(() => {
                     submitBtn.innerHTML = originalHtml;
                     submitBtn.style.background = '';
                     submitBtn.disabled = false;
-                }, 3500);
-            }, 1000);
+                }, 4000);
+            }
         });
     }
 });
