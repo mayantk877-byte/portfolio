@@ -4,8 +4,8 @@
   "description": "Professional Java Full Stack Developer & Data Analyst Portfolio of T. Mayan",
   "main": "index.html",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js",
     "serve": "npx --yes http-server -p 3000 -c-1"
   },
   "keywords": [
